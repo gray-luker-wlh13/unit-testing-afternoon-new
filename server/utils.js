@@ -7,7 +7,7 @@ module.exports = {
         a[v.id] = v;
         return a;
       }, {});
-      return posts.map(p => {
+      return posts.filter(p => userDict[p.userId]).map(p => {
         p.displayName = `${userDict[p.userId].first} ${userDict[p.userId].last}`;
         return p;
       });
